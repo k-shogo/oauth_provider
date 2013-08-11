@@ -58,5 +58,20 @@ module OauthProvider
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Doorkeeper layout option
+    config.to_prepare do
+      # Base layout. Uses app/views/layouts/application.html.erb
+      Doorkeeper::ApplicationController.layout "application"
+
+      # Only Applications list
+      Doorkeeper::ApplicationsController.layout "application"
+
+      # Only Authorization endpoint
+      Doorkeeper::AuthorizationsController.layout "application"
+
+      # Only Authorized Applications
+      Doorkeeper::AuthorizedApplicationsController.layout "application"
+    end
   end
 end
