@@ -1,4 +1,6 @@
 OauthProvider::Application.routes.draw do
+  devise_for :administrators
+
   use_doorkeeper
 
   devise_for :users
