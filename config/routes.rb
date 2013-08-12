@@ -1,7 +1,10 @@
 OauthProvider::Application.routes.draw do
   devise_for :administrators
 
-  use_doorkeeper
+  use_doorkeeper do
+    # it accepts :authorizations, :tokens, :applications and :authorized_applications
+    controllers :applications => 'oauth_applications'
+  end
 
   devise_for :users
 
