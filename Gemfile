@@ -46,6 +46,8 @@ group :development do
   gem 'tapp'
   gem 'awesome_print'
 
+  gem 'erb2haml'
+
   gem 'quiet_assets'
 end
 
