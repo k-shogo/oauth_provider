@@ -4,4 +4,8 @@ Rails.application.routes.draw do
   end
   devise_for :developers
   devise_for :users
+
+  namespace :api, defaults: {format: :json} do
+    resource :user, only: :show
+  end
 end
